@@ -12,6 +12,7 @@ TagManager:
   - DroneBatt
   - Corps
   - EXPL
+  - Shop
   layers:
   - Default
   - TransparentFX

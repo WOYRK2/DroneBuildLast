@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Triggers : MonoBehaviour
 {
+    [Header("Ui panel")]
+    [SerializeField] private GameObject _ShopPanel;
+    [SerializeField] private GameObject _PlrValuePanel;
     private GameManager _gameManager;
     private Rigidbody2D _rigidbody2D;
 
@@ -12,59 +15,42 @@ public class Triggers : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    /*
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Death"))
-        {
-            _gameManager.IMDEATH();
-        }
-    }
-    */
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Deaths
-        if (other.gameObject.CompareTag("Death"))
+        switch (other.tag)
         {
-            _gameManager.IMDEATH();
-        }
-        
-        // Coins
-        if (other.gameObject.CompareTag("CoinBase"))
-        {
-            _gameManager.ADDCOIN(1);
-        }
+            case "Death":
+                _gameManager.IMDEATH();
+                break;
 
-        if (other.gameObject.CompareTag("CoinRare"))
-        {
-            _gameManager.ADDCOIN(2);
-        }
+            case "CoinBase":
+                _gameManager.ADDCOIN(1);
+                break;
 
-        if (other.gameObject.CompareTag("CoinEpic"))
-        {
-            _gameManager.ADDCOIN(5);
-        }
+            case "CoinRare":
+                _gameManager.ADDCOIN(2);
+                break;
 
-        // FPV drone battery
+            case "CoinEpic":
+                _gameManager.ADDCOIN(5);
+                break;
 
-        if (other.gameObject.CompareTag("DroneBatt"))
-        {
-            _gameManager.ADDBATT(1);
-        }
+            case "DroneBatt":
+                _gameManager.ADDBATT(1);
+                break;
 
-        // Corps
+            case "Corps":
+                _gameManager.ADDCORPS(1);
+                break;
 
-        if (other.gameObject.CompareTag("Corps"))
-        {
-            _gameManager.ADDCORPS(1);
-        }
+            case "EXPL":
+                _gameManager.ADDEXPL(1);
+                break;
+            case "Shop":
+                _PlrValuePanel.SetActive(false);
+                _ShopPanel.SetActive(true);
 
-        // EXPL
-
-        if (other.gameObject.CompareTag("EXPL"))
-        {
-            _gameManager.ADDEXPL(1);
+                break;
         }
     }
 }

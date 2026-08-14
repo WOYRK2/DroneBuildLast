@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     private int FPV_drone_battery = 0;
     private int corps = 0;
     private int Explosives = 0;
-
     void Awake()
     {
         _playerMovent = FindAnyObjectByType<PlayerMovent>();
@@ -62,7 +61,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Value plr defs
-
+    // PLUS
     public void ADDCOIN(int howmuchtoplus)
     {
         coins += howmuchtoplus;
@@ -90,10 +89,44 @@ public class GameManager : MonoBehaviour
         _textExplosives.text = "Explosives: " + Explosives;
         SAVEALLDATAS();
     }
+    
+    // MINUS
+    public void MINCOIN(int howmuchtominus)
+    {
+        coins -= howmuchtominus;
+        _textCoins.text = "Coins: " + coins;
+        SAVEALLDATAS();
+    }
 
+    public void MINBATT(int howmuchtominus)
+    {
+        FPV_drone_battery -= howmuchtominus;
+        _textFPVdroneBattery.text = "FPV drone battery: " + FPV_drone_battery;
+        SAVEALLDATAS();
+    }
+
+    public void MINCORPS(int howmuchtominus)
+    {
+        corps -= howmuchtominus;
+        _textCorps.text = "Corps: " + corps;
+        SAVEALLDATAS();
+    }
+
+    public void MINEXPL(int howmuchtominus)
+    {
+        Explosives -= howmuchtominus;
+        _textExplosives.text = "Explosives: " + Explosives;
+        SAVEALLDATAS();
+    }
+
+    // CHECK
+
+    public bool CHECKCOINS(int valuetocheck)
+    {
+        return coins >= valuetocheck;
+    }
 
     // Save/Load datas defs
-    // сделать сохранение через - PlayerPrefs
     public void SAVEALLDATAS()
     {
         PlayerPrefs.SetInt("Coin", coins);
