@@ -5,14 +5,13 @@ public class Triggers : MonoBehaviour
 {
     [Header("Ui panel")]
     [SerializeField] private GameObject _ShopPanel;
+    [SerializeField] private GameObject _CraftPanel;
     [SerializeField] private GameObject _PlrValuePanel;
     private GameManager _gameManager;
-    private Rigidbody2D _rigidbody2D;
 
     void Awake()
     {
         _gameManager = FindAnyObjectByType<GameManager>();
-        _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -46,10 +45,27 @@ public class Triggers : MonoBehaviour
             case "EXPL":
                 _gameManager.ADDEXPL(1);
                 break;
-            case "Shop":
-                _PlrValuePanel.SetActive(false);
-                _ShopPanel.SetActive(true);
 
+            case "Shop":
+                _ShopPanel.SetActive(true);
+                break;
+            
+            case "Craft":
+                _CraftPanel.SetActive(true);
+                break;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        switch (other.tag)
+        {
+            case "Shop":
+                _ShopPanel.SetActive(false);
+                break;
+            
+            case "Craft":
+                _CraftPanel.SetActive(false);
                 break;
         }
     }
