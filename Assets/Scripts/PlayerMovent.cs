@@ -1,6 +1,4 @@
-using UnityEditor.Callbacks;
 using UnityEngine;
-using UnityEngine.InputSystem.iOS;
 
 public class PlayerMovent : MonoBehaviour
 {

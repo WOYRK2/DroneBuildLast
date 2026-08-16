@@ -14,6 +14,7 @@ TagManager:
   - EXPL
   - Shop
   - Craft
+  - plr
   layers:
   - Default
   - TransparentFX

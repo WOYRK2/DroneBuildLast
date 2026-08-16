@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3ec0b83e246bb8f4dba5e8dee9638377
+guid: c06f01b8edd3c1d40b219a1471eae742
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9128514023761760859
-    second: "\u043A\u0440\u0430\u0444\u0442_0"
+      213: -2428856457356173835
+    second: pixel-explosion_884359-1125-Photoroom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u043A\u0440\u0430\u0444\u0442_0"
+      name: pixel-explosion_884359-1125-Photoroom_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 39
-        width: 1204
-        height: 1195
+        x: 117
+        y: 123
+        width: 515
+        height: 504
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b52dd71c32ffeae70800000000000000
-      internalID: 9128514023761760859
+      spriteID: 5fd1fd0bbe7fa4ed0800000000000000
+      internalID: -2428856457356173835
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u043A\u0440\u0430\u0444\u0442_0": 9128514023761760859
+      pixel-explosion_884359-1125-Photoroom_0: -2428856457356173835
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

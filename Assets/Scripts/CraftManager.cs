@@ -30,7 +30,7 @@ public class CraftManager : MonoBehaviour
             _audioSourceCraft.Play();
         }
 
-        if (_gameManager.Fpv_dronePLR >= 10)
+        if (_gameManager.Fpv_dronePLR >= 5)
         {
             _gameManager.RESETALLDATA();
             _gameManager.LOADNEXTLVL();

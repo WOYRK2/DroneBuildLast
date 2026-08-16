@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
         _textFPVdroneBattery.text = "FPV drone battery: " + FPV_drone_battery;
         _textExplosives.text = "Explosives: " + Explosives;
         _textCoins.text = "Coins: " + coins;
-        _textNeedToUpLvl.text = "NEED " + fpv_dronePLR + "/10 FPV DRONE";
+        _textNeedToUpLvl.text = "NEED " + fpv_dronePLR + "/5 FPV DRONE";
     }
 
     // Scene defs
@@ -164,7 +164,7 @@ public class GameManager : MonoBehaviour
     public void ADDFPVDRONE(int howmuchtoplus)
     {
         fpv_dronePLR += howmuchtoplus;
-        _textNeedToUpLvl.text = "NEED " + fpv_dronePLR + "/10 FPV DRONE";
+        _textNeedToUpLvl.text = "NEED " + fpv_dronePLR + "/5 FPV DRONE";
         SAVEALLDATAS();
     }
     

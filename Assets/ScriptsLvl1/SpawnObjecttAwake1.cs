@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 
-public class SpawnObjecttAwake : MonoBehaviour
+public class SpawnObjecttAwake1 : MonoBehaviour
 {
     [SerializeField] private GameObject _gameObjectBoomAnim;
     [SerializeField] private GameObject _gameObjectBaseCoin;
@@ -88,8 +88,8 @@ public class SpawnObjecttAwake : MonoBehaviour
 
         также если в массиве уже 5 чисел, то удалять первые две. Записывать первые два числа в отдельную переменную и потом уже удалять
         */
-        GenRanNum();
-        Invoke("Random", RandomDelay);
+        // GenRanNum();
+        Invoke("Random", 1);
     }
 
     void GenRanNum()
