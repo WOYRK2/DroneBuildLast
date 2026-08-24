@@ -28,8 +28,7 @@ public class SpawnObjecttAwake : MonoBehaviour
     {
         Bounds _bounds = _gameObjectArea.bounds;
         Vector2 RandomPos = new Vector2(UnityEngine.Random.Range(_bounds.min.x, _bounds.max.x),
-        UnityEngine.Random.Range(_bounds.min.y, _bounds.max.y)
-        );
+        UnityEngine.Random.Range(_bounds.min.y, _bounds.max.y));
 
         int random = 0;
         random = UnityEngine.Random.Range(0, 100);
