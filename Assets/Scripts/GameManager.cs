@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _gameObject_DeathPanel;
     [SerializeField] private GameObject _gameObject_PlrValuesPanel;
     [SerializeField] private GameObject _gameObject_NeededToUpLvl;
+    [SerializeField] private GameObject _gameObject_WarningPanel;
 
     [Header("Ui text")]
 
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text _textCorps;
     [SerializeField] private Text _textExplosives;
     [SerializeField] private Text _textNeedToUpLvl;
+    [SerializeField] private int _TextNeedToUpInt = 5;
 
     private PlayerMovent _playerMovent;
     private int coins = 0;
@@ -83,7 +85,7 @@ public class GameManager : MonoBehaviour
         _textFPVdroneBattery.text = "FPV drone battery: " + FPV_drone_battery;
         _textExplosives.text = "Explosives: " + Explosives;
         _textCoins.text = "Coins: " + coins;
-        _textNeedToUpLvl.text = "NEED " + fpv_dronePLR + "/5 FPV DRONE";
+        _textNeedToUpLvl.text = "NEED " + fpv_dronePLR + "/" + _TextNeedToUpInt +" FPV DRONE";
     }
 
     // Scene defs
@@ -94,6 +96,7 @@ public class GameManager : MonoBehaviour
         _gameObject_DeathPanel.SetActive(true);
         _gameObject_PlrValuesPanel.SetActive(false);
         _gameObject_NeededToUpLvl.SetActive(false);
+        _gameObject_WarningPanel.SetActive(false);
 
         SAVEALLDATAS();
     }
@@ -164,7 +167,7 @@ public class GameManager : MonoBehaviour
     public void ADDFPVDRONE(int howmuchtoplus)
     {
         fpv_dronePLR += howmuchtoplus;
-        _textNeedToUpLvl.text = "NEED " + fpv_dronePLR + "/5 FPV DRONE";
+        _textNeedToUpLvl.text = "NEED " + fpv_dronePLR + "/" + _TextNeedToUpInt + " FPV DRONE";
         SAVEALLDATAS();
     }
     
